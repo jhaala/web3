@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.group-dropdown:hover .group-dropdown-hover\:visible {
-    visibility: visible
-}
-
-.group-dropdown:hover .group-dropdown-hover\:opacity-100 {
-    opacity: 1
-}
