@@ -11,7 +11,7 @@ const AppLayout = ({ pageTitle, children }: Props): JSX.Element => {
   return (
     <div id="app">
       <Header />
-      {/* <Hero /> */}
+      <Hero />
       {/* <main>{children}</main> */}
     </div>
   );
