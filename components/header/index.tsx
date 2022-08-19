@@ -20,15 +20,15 @@ const Header = () => {
             <ul className='flex flex-col lg:flex-row'>
               {navbarDropdown.map(item => {
                 return (
-                  <li className='group relative'>
+                  <li className='group relative' key={`${item?.navItem}_navItem`}>
                     <a className='dropdown-toggle flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5'>
                       {item?.navItem}
                     </a>
-                    {item?.dropdownItems?.length > 0 ? (
+                    {item?.dropdownItems && item?.dropdownItems?.length > 0 ? (
                       <ul className={item?.className}>
                         {item?.dropdownItems?.map((dropdownItem: { name: string; svg?: JSX.Element }) => {
                           return (
-                            <li>
+                            <li key={`${dropdownItem?.name}_dropdownItem`}>
                               <a className='flex items-center rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600'>
                                 {dropdownItem?.svg}
                                 <span className='font-display text-sm text-jacarta-700 dark:text-white'>{dropdownItem?.name}</span>
