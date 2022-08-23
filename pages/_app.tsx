@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
     <AppLayout pageTitle={`Web3 App`}>
       <Component {...pageProps} />
     </AppLayout>
-  )
+  );
 }
 
-export default App
+export default App;
