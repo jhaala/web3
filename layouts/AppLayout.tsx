@@ -11,10 +11,10 @@ interface Props {
 const AppLayout = ({ children }: Props): JSX.Element => {
   return (
     <div id='app'>
-      {/* <Header /> */}
-      {/* <Hero /> */}
+      <Header />
+      <Hero />
       <Carousel />
-      {/* <main>{children}</main> */}
+      <main>{children}</main>
     </div>
   );
 };

@@ -15,7 +15,6 @@ const Carousel = () => {
     <div className='relative px-6 pb-16 sm:px-0'>
       <div className='swiper coverflow-slider !py-5'>
         <Swiper
-          // install Swiper modules
           effect='coverflow'
           modules={[EffectCoverflow, Navigation, Lazy]}
           speed={400}
