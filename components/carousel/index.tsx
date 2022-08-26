@@ -15,7 +15,7 @@ const Carousel = () => {
 
   return (
     <div className='relative px-6 pb-16 sm:px-0'>
-      <div className='swiper coverflow-slider !py-5'>
+      <div className='swiper coverflow-slider !pt-5'>
         <Swiper
           effect='coverflow'
           modules={[EffectCoverflow, Navigation, Lazy]}
@@ -55,7 +55,7 @@ const Carousel = () => {
             //@ts-ignore
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }}
-          className='swiper-wrapper'
+          className='swiper-wrapper !pb-6'
         >
           {SLIDER_CONSTANT.map(slider => (
             <SwiperSlide className='swiper-slide' key={`${slider.nftName}_slider`}>
