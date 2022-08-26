@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <main>
       <section className='hero relative py-20 md:pt-32'>
-        <picture className='pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden'>
+        <picture className='pointer-events-none absolute inset-x-0 top-0 -z-10'>
           <img src='img/gradient.jpg' alt='' />
         </picture>
         <picture className='pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block'>
