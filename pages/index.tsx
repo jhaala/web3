@@ -9,7 +9,7 @@ const Home: NextPage = () => {
 
         <div className='mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full'>
           <a
-            href='https://github.com/MoralisWeb3/react-moralis'
+            href='https://github.com/vercel/next.js/tree/canary/examples'
             target='_blank'
             className='mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600'
             rel='noreferrer'
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
             <h3 className='text-2xl font-bold'>Moralis JS SDK</h3>
           </a>
           <a
-            href='https://github.com/vercel/next.js/tree/canary/examples'
+            href='https://github.com/MoralisWeb3/react-moralis'
             target='_blank'
             className='mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600'
             rel='noreferrer'
