@@ -1,4 +1,4 @@
-export const navbarDropdown = [
+export const NAVBAR_CONSTANTS = [
   {
     navItem: 'Home',
     className:

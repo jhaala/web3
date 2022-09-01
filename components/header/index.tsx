@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ConnetWallet from '../wallet';
-import { navbarDropdown } from '../../constants/DropdownConstants';
-import ProfileDropdown from '../profile/ProfileDropdown';
+import ConnetWallet from 'components/wallet';
+import { NAVBAR_CONSTANTS } from 'constants/DropdownConstants';
+import ProfileDropdown from 'components/profile/ProfileDropdown';
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
           {/* <!-- Primary Nav --> */}
           <nav className='navbar w-full'>
             <ul className='flex flex-col lg:flex-row'>
-              {navbarDropdown.map(item => {
+              {NAVBAR_CONSTANTS.map(item => {
                 return (
                   <li className='group relative' key={`${item?.navItem}_navItem`}>
                     <a className='dropdown-toggle flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5'>
