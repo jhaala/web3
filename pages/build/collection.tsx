@@ -19,7 +19,7 @@ const collection = () => {
           </div>
         </Dropzone>
       </Card>
-      <BuildCollection />
+      {/* <BuildCollection /> */}
     </div>
   );
 };
