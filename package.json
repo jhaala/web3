@@ -24,7 +24,10 @@
     "mysql2": "^2.3.3",
     "next": "^12.2.5",
     "react": "18.2.0",
+    "react-cropper": "^2.1.8",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.2",
+    "react-icons": "^4.4.0",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
     "tailgrids": "^1.1.7"
