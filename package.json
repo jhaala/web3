@@ -29,14 +29,12 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.2",
     "react-icons": "^4.4.0",
+    "react-image-crop": "^10.0.6",
     "styled-components": "^5.3.5",
-    "swiper": "^8.3.2",
-    "tailgrids": "^1.1.7"
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
-    "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.2",
     "@types/jest": "^28.1.7",
     "@types/node": "18.7.3",
     "@types/react": "18.0.17",

@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import Header from 'components/header';
+import Hero from 'components/hero';
+import Carousel from 'components/carousel';
 
 interface Props {
   pageTitle?: string | null;
@@ -9,8 +11,7 @@ interface Props {
 const AppLayout = ({ children }: Props): JSX.Element => {
   return (
     <div id='app'>
-      <Header />
-      {/* <Carousel /> */}
+      {/* <Header /> */}
       <main>{children}</main>
     </div>
   );

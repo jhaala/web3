@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './layouts/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -36,5 +35,4 @@ module.exports = {
       body: ['"DM Sans"', 'sans-serif'],
     },
   },
-  plugins: [require('tailgrids/plugin'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms')],
 };
