@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { BsCloudUpload } from 'react-icons/bs';
-import ReactCrop, { centerCrop, makeAspectCrop, Crop, PixelCrop } from 'react-image-crop';
+import { centerCrop, makeAspectCrop, Crop, PixelCrop } from 'react-image-crop';
 
 import Card from 'components/card';
 import Dropzone from 'components/dropzone';
