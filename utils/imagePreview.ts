@@ -1,9 +1,9 @@
 import { PixelCrop } from 'react-image-crop';
-import { canvasPreview } from './canvasPreview';
+import { canvasPreview } from 'utils/canvasPreview';
 
 let previewUrl = '';
 
-function toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
+export function toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
   return new Promise(resolve => {
     // @ts-ignore
     canvas.toBlob(resolve);

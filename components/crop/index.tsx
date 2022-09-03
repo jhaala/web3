@@ -7,34 +7,42 @@ interface ImageCropperType {
   crop: any;
   imgSrc: any;
   imgRef: any;
-  completedCrop: any;
-  previewCanvasRef: any;
   setCrop: any;
   onImageLoad: any;
-  onSelectFile: any;
   setCompletedCrop: any;
-  //   onChange: (files: File[]) => void;
+  className?: any;
+  style?: any;
+  disabled?: boolean;
 }
 
 const ImageCropper: React.FC<ImageCropperType> = ({
   crop,
   imgSrc,
-  completedCrop,
   imgRef,
-  previewCanvasRef,
   setCrop,
   onImageLoad,
-  onSelectFile,
   setCompletedCrop,
+  className,
+  style,
+  disabled,
 }) => {
   return (
-    <div className='App'>
-      <div className='Crop-Controls'>
-        <input type='file' accept='image/*' onChange={onSelectFile} />
-      </div>
+    <div className={className}>
       {Boolean(imgSrc) && (
-        <ReactCrop locked={true} crop={crop} onChange={(_, percentCrop) => setCrop(percentCrop)} onComplete={c => setCompletedCrop(c)}>
-          <img width='600' className='shadow-lg' ref={imgRef} alt='Crop me' src={imgSrc} onLoad={onImageLoad} />
+        <ReactCrop
+          locked={true}
+          crop={crop}
+          onChange={(_, percentCrop) => {
+            // console.log({ percentCrop });
+            setCrop(percentCrop);
+          }}
+          onComplete={c => {
+            // console.log({ c });
+            setCompletedCrop(c);
+          }}
+          disabled={disabled}
+        >
+          <img ref={imgRef} alt='Crop me' src={imgSrc} onLoad={onImageLoad} style={style} />
         </ReactCrop>
       )}
     </div>

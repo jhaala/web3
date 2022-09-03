@@ -67,7 +67,7 @@ const PopupModal: React.FC<PopupModalType> = ({
           >
             <div
               className={classnames(
-                'inline-block w-full p-6 my-8 text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl',
+                'inline-block w-full p-6 my-8 text-left align-middle transition-all transform bg-white shadow-xl mx-auto rounded-2xl',
                 {
                   'overflow-hidden': !noOverflow,
                   'max-w-5xl': large,
