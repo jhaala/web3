@@ -9,6 +9,7 @@ const useBuildCollection = () => {
   const [show, setShow] = useState(false);
   const [crop, setCrop] = useState<Crop>();
   const [imgSrc, setImgSrc] = useState('');
+  const [isCropAllow, setIsCropAllow] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File>();
   const [completedCrop, setCompletedCrop] = useState<PixelCrop>();
 
@@ -17,6 +18,11 @@ const useBuildCollection = () => {
 
   const aspect = 1;
   const acceptedTypeNames = ['JPG', 'PNG'];
+
+  const onAllowCropModal = (iscCrop: boolean) => {
+    setShow(true);
+    setIsCropAllow(!iscCrop);
+  };
 
   const onSelectFile = async (fileList: File[]) => {
     try {
@@ -60,6 +66,7 @@ const useBuildCollection = () => {
     show,
     imgRef,
     imgSrc,
+    isCropAllow,
     selectedFile,
     completedCrop,
     previewCanvasRef,
@@ -68,6 +75,7 @@ const useBuildCollection = () => {
     setCrop,
     onImageLoad,
     onSelectFile,
+    onAllowCropModal,
     setCompletedCrop,
     checkImageDimension,
   };

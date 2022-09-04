@@ -15,6 +15,7 @@ const BuildCollection = () => {
     show,
     imgSrc,
     imgRef,
+    isCropAllow,
     completedCrop,
     previewCanvasRef,
     acceptedTypeNames,
@@ -23,6 +24,7 @@ const BuildCollection = () => {
     onImageLoad,
     onSelectFile,
     setCompletedCrop,
+    onAllowCropModal,
   } = useBuildCollection();
   return (
     <div className='my-10'>
@@ -31,16 +33,22 @@ const BuildCollection = () => {
           {completedCrop ? (
             <span className='flex-center relative group w-2/4'>
               <canvas ref={previewCanvasRef} className='rounded-2xl w-full' />
-              <div className='absolute divide-x divide-white bottom-0 flex-center rounded-2xl w-full h-0 bg-gray-900  opacity-0 group-hover:h-10 md:group-hover:h-16 group-hover:opacity-75 duration-200'>
+              <div className='absolute divide-x divide-white bottom-0 flex-center rounded-b-2xl w-full h-0 bg-gray-900  opacity-0 group-hover:h-10 lg:group-hover:h-16 group-hover:opacity-75 duration-200'>
                 <div className='w-1/2'>
-                  <div className='flex-center flex-col hover:cursor-pointer text-white hover:text-white/60' onClick={() => setShow(true)}>
-                    <BsFillImageFill className='text-center text-xs sm:text-md' />
+                  <div
+                    className='flex-center flex-col hover:cursor-pointer text-white hover:text-white/60'
+                    onClick={() => onAllowCropModal(false)}
+                  >
+                    <BsFillImageFill className='text-center text-xs' />
                     <span className='text-xs text-center'>Preview</span>
                   </div>
                 </div>
                 <div className='w-1/2'>
-                  <div className='flex-center flex-col hover:cursor-pointer text-white hover:text-white/60' onClick={() => setShow(true)}>
-                    <MdImageSearch className='text-center text-xs sm:text-md' />
+                  <div
+                    className='flex-center flex-col hover:cursor-pointer text-white hover:text-white/60'
+                    onClick={() => onAllowCropModal(true)}
+                  >
+                    <MdImageSearch className='text-center text-xs' />
                     <span className='text-xs text-center'>Crop</span>
                   </div>
                 </div>
@@ -75,7 +83,6 @@ const BuildCollection = () => {
           </Button>
         </div>
       </Card>
-      {/* <BuildCollection /> */}
       <PopupModal show={show} title={'Crop Image'} closeBtn onClose={() => setShow(false)} large>
         <ImageCropper
           crop={crop}
@@ -86,6 +93,7 @@ const BuildCollection = () => {
           setCompletedCrop={setCompletedCrop}
           style={{ width: '600px' }}
           className='flex-center'
+          disabled={isCropAllow}
         />
       </PopupModal>
     </div>
