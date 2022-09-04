@@ -33,11 +33,9 @@ const ImageCropper: React.FC<ImageCropperType> = ({
           locked={true}
           crop={crop}
           onChange={(_, percentCrop) => {
-            // console.log({ percentCrop });
             setCrop(percentCrop);
           }}
           onComplete={c => {
-            // console.log({ c });
             setCompletedCrop(c);
           }}
           disabled={disabled}
