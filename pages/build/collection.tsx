@@ -1,12 +1,8 @@
 // import BuildCollection from 'components/crop';
-import BuildCollectionTesting from 'components/testing';
+import BuildCollection from 'components/Collection/Build';
 
 const collection = () => {
-  return (
-    <>
-      <BuildCollectionTesting />
-    </>
-  );
+  return <BuildCollection />;
 };
 
 export default collection;
