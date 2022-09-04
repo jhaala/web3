@@ -3,7 +3,7 @@ import { Crop, PixelCrop } from 'react-image-crop';
 
 import { canvasPreview } from 'utils/canvasPreview';
 import { useDebounceEffect } from 'hooks/useDebounceEffect';
-import { centerAspectCrop, checkImageDimension, resizeImageDimension } from 'utils/helper';
+import { centerAspectCrop, checkImageDimension } from 'utils/helper';
 
 const useBuildCollection = () => {
   const [show, setShow] = useState(false);
