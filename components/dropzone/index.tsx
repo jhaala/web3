@@ -26,7 +26,7 @@ const Dropzone: React.FC<DropzoneType> = ({ onChange, children }) => {
   }, [acceptedFiles]);
 
   return (
-    <section className='h-80 transition bg-gray-100 cursor-pointer hover:bg-gray-200 rounded-3xl'>
+    <section className='h-80 transition bg-gray-100 cursor-pointer hover:bg-gray-200 rounded-3xl w-full'>
       <div {...getRootProps({ className: 'flex-center h-full' })}>
         <input {...getInputProps()} />
         <div className='dropzone__elements'>{children}</div>
