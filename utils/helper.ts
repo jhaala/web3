@@ -40,7 +40,7 @@ export const centerAspectCrop = (mediaWidth: number, mediaHeight: number, aspect
     makeAspectCrop(
       {
         unit: '%',
-        width: 100,
+        width: 95,
       },
       aspect,
       mediaWidth,
