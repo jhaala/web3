@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import Header from 'components/header';
-import Hero from 'components/hero';
-import Carousel from 'components/carousel';
+// import Hero from 'components/hero';
+// import Header from 'components/header';
+// import Carousel from 'components/carousel';
 
 interface Props {
   pageTitle?: string | null;
