@@ -113,7 +113,7 @@ const BuildCollection = () => {
           </Button>
         </div>
       </Card>
-      <PopupModal show={show} title={'Crop Image'} closeBtn onClose={() => setShow(false)} large>
+      <PopupModal show={show} title={isCropAllow ? 'Preview Image' : 'Crop Image'} closeBtn onClose={() => setShow(false)} large>
         <ImageCropper
           crop={crop}
           imgSrc={imgSrc}

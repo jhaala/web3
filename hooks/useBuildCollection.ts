@@ -19,9 +19,9 @@ const useBuildCollection = () => {
   const aspect = 1;
   const acceptedTypeNames = ['JPG', 'PNG'];
 
-  const onAllowCropModal = (iscCrop: boolean) => {
+  const onAllowCropModal = (isCrop: boolean) => {
     setShow(true);
-    setIsCropAllow(!iscCrop);
+    setIsCropAllow(!isCrop);
   };
 
   const onSelectFile = async (fileList: File[]) => {
