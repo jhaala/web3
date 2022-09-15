@@ -13,7 +13,7 @@ const FormTextarea: React.FC<TextareaType> = ({ rows = 5, error, className = '',
       <textarea
         rows={rows}
         className={classnames(
-          `relative block w-full p-4 text-gray-900 placeholder-gray-700 border-0 !ring-gray-800/20 rounded-2xl appearance-none resize-none bg-slate-100 sm:text-sm ${className}`,
+          `relative block w-full p-4 text-gray-900 placeholder-gray-400 focus:ring-black/30 outline-none ring-1 ring-gray-800/20 rounded-2xl appearance-none resize-none bg-slate-100 sm:text-sm ${className}`,
           { 'resize-y': expandable },
         )}
         {...rest}
