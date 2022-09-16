@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 // import Hero from 'components/hero';
-// import Header from 'components/header';
+import Header from 'components/header';
 // import Carousel from 'components/carousel';
 
 interface Props {
@@ -11,7 +11,9 @@ interface Props {
 const AppLayout = ({ children }: Props): JSX.Element => {
   return (
     <div id='app'>
-      {/* <Header /> */}
+      <Header />
+      {/* <Hero />
+      <Carousel /> */}
       <main>{children}</main>
     </div>
   );

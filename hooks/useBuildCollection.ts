@@ -1,9 +1,17 @@
 import React, { useRef, useState } from 'react';
 import { Crop, PixelCrop } from 'react-image-crop';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { canvasPreview } from 'utils/canvasPreview';
 import { useDebounceEffect } from 'hooks/useDebounceEffect';
-import { centerAspectCrop, checkImageDimension } from 'utils/helper';
+import { centerAspectCrop, checkImageDimension, resizeImageDimension } from 'utils/helper';
+
+export interface BuildCollectionInputType {
+  name: string;
+  slug: string;
+  description: string;
+  keywords: string;
+}
 
 const useBuildCollection = () => {
   const [show, setShow] = useState(false);
@@ -13,11 +21,25 @@ const useBuildCollection = () => {
   const [selectedFile, setSelectedFile] = useState<File>();
   const [completedCrop, setCompletedCrop] = useState<PixelCrop>();
 
+  const { control, handleSubmit } = useForm<BuildCollectionInputType>();
+
   const imgRef = useRef<HTMLImageElement>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
 
   const aspect = 1;
   const acceptedTypeNames = ['JPG', 'PNG'];
+
+  const onSubmit: SubmitHandler<BuildCollectionInputType> = async data => {
+    console.log(data);
+    if (selectedFile && imgSrc) {
+      await resizeImageDimension(imgSrc, 1200, (resizedImage: string) => {
+        console.log('resizedImage 1200 dataUri', { resizedImage });
+      });
+      await resizeImageDimension(imgSrc, 300, (resizedImage: string) => {
+        console.log('resizedImage 300 dataUri', { resizedImage });
+      });
+    }
+  };
 
   const onAllowCropModal = (isCrop: boolean) => {
     setShow(true);
@@ -66,6 +88,7 @@ const useBuildCollection = () => {
     show,
     imgRef,
     imgSrc,
+    control,
     isCropAllow,
     selectedFile,
     completedCrop,
@@ -73,7 +96,9 @@ const useBuildCollection = () => {
     acceptedTypeNames,
     setShow,
     setCrop,
+    onSubmit,
     onImageLoad,
+    handleSubmit,
     onSelectFile,
     onAllowCropModal,
     setCompletedCrop,
