@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Header from 'components/header';
 
 interface Props {
-  pageTitle?: string | null;
+  // pageTitle?: string | null;
   children: ReactNode;
 }
 

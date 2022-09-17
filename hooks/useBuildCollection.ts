@@ -25,6 +25,7 @@ const useBuildCollection = () => {
 
   const onSubmit: SubmitHandler<BuildCollectionInputType> = async data => {
     console.log(data);
+    // Check if image is uploaded then generate image thumbnail
     if (selectedFile && imgSrc) {
       await resizeImageDimension(imgSrc, 1200, (resizedImage: string) => {
         console.log('resizedImage 1200 dataUri', { resizedImage });
@@ -43,9 +44,6 @@ const useBuildCollection = () => {
   const onSelectFile = async (fileList: File[]) => {
     try {
       const assetUrl = URL.createObjectURL(fileList[0]);
-      //   await resizeImageDimension(assetUrl, 300, (uri: string) => {
-      //     console.log({ uri });
-      //   });
       await checkImageDimension(assetUrl, (dimensionCheck: boolean) => {
         // if both dimension width and height is greater then 1200
         if (dimensionCheck) {
@@ -54,7 +52,6 @@ const useBuildCollection = () => {
           setImgSrc(assetUrl);
         }
       });
-      // resizeImage(assetUrl);
     } catch (error) {
       console.log('onSelectFile', error);
     }

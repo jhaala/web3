@@ -10,8 +10,6 @@ export function toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
   });
 }
 
-// Returns an image source you should set to state and pass
-// `{previewSrc && <img alt="Crop preview" src={previewSrc} />}`
 export async function imgPreview(image: HTMLImageElement, crop: PixelCrop) {
   const canvas = document.createElement('canvas');
   canvasPreview(image, canvas, crop);
