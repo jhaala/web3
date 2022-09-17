@@ -1,7 +1,7 @@
 import React from 'react';
+import { Controller } from 'react-hook-form';
 import { MdImageSearch } from 'react-icons/md';
 import { BsCloudUpload, BsFillImageFill } from 'react-icons/bs';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 
 import Card from 'components/card';
 import Button from 'components/button';
@@ -10,14 +10,8 @@ import PopupModal from 'components/modal';
 import Dropzone from 'components/dropzone';
 import ImageCropper from 'components/crop';
 import useBuildCollection from 'hooks/useBuildCollection';
+import { BuildCollectionInputType } from 'constants/CollectionConstants';
 import { BuildCollectionFields } from 'constants/BuildCollectionFieldsConstants';
-
-export interface BuildCollectionInputType {
-  name: string;
-  slug: string;
-  description: string;
-  keywords: string;
-}
 
 const BuildCollection = () => {
   const {
@@ -25,24 +19,23 @@ const BuildCollection = () => {
     show,
     imgSrc,
     imgRef,
+    control,
     isCropAllow,
     completedCrop,
     previewCanvasRef,
     acceptedTypeNames,
     setShow,
     setCrop,
+    onSubmit,
     onImageLoad,
+    handleSubmit,
     onSelectFile,
     setCompletedCrop,
     onAllowCropModal,
   } = useBuildCollection();
 
-  const { control, handleSubmit } = useForm<BuildCollectionInputType>();
-
-  const onSubmit: SubmitHandler<BuildCollectionInputType> = data => console.log(data);
-
   return (
-    <div className='my-10'>
+    <div className='mb-10 mt-40'>
       <Card className='mx-2 sm:mx-10 md:mx-20 lg:mx-52 xl:mx-72'>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading text='Create a Nft Collection' />

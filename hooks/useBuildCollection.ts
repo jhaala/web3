@@ -4,14 +4,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { canvasPreview } from 'utils/canvasPreview';
 import { useDebounceEffect } from 'hooks/useDebounceEffect';
+import { BuildCollectionInputType } from 'constants/CollectionConstants';
 import { centerAspectCrop, checkImageDimension, resizeImageDimension } from 'utils/helper';
-
-export interface BuildCollectionInputType {
-  name: string;
-  slug: string;
-  description: string;
-  keywords: string;
-}
 
 const useBuildCollection = () => {
   const [show, setShow] = useState(false);
