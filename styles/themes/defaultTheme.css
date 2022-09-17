@@ -3170,13 +3170,6 @@
       overflow: hidden
   }
   
-  
-
-
-
-  
-
-  
   .tippy-box[data-theme~=xhibiter] {
       --tw-bg-opacity: 1;
       background-color: rgba(19, 23, 64, var(--tw-bg-opacity))
@@ -3200,15 +3193,6 @@
   .tippy-box[data-theme~=xhibiter][data-placement^=right]>.tippy-arrow:before {
       --tw-border-opacity: 1;
       border-right-color: rgba(19, 23, 64, var(--tw-border-opacity))
-  }
-  
-  .js-page-header--is-sticky {
-      background-color: hsla(0, 0%, 100%, .5)
-  }
-  
-  .dark .js-page-header--is-sticky,
-  .js-page-header--is-sticky.page-header--transparent {
-      background-color: rgba(19, 23, 64, .5)
   }
   
   .nav-link.active {
