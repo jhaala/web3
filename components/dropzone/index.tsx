@@ -1,14 +1,11 @@
-// @ts-nocheck
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 
-const MAX_SIZE = 104857600; // 100MB
-const MAX_FILES = 1;
+import { MAX_FILES, MAX_SIZE } from 'constants/CollectionConstants';
 
 interface DropzoneType {
-  onChange: any;
-  children?: JSX.Element | JSX.Element[];
-  //   onChange: (files: File[]) => void;
+  children: JSX.Element[];
+  onChange: (fileList: File[]) => Promise<void>;
 }
 
 const Dropzone: React.FC<DropzoneType> = ({ onChange, children }) => {
