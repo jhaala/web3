@@ -24,15 +24,19 @@ const useBuildCollection = () => {
   const acceptedTypeNames = ['JPG', 'PNG'];
 
   const onSubmit: SubmitHandler<BuildCollectionInputType> = async data => {
-    console.log(data);
-    // Check if image is uploaded then generate image thumbnail
-    if (selectedFile && imgSrc) {
-      await resizeImageDimension(imgSrc, 1200, (resizedImage: string) => {
-        console.log('resizedImage 1200 dataUri', { resizedImage });
-      });
-      await resizeImageDimension(imgSrc, 300, (resizedImage: string) => {
-        console.log('resizedImage 300 dataUri', { resizedImage });
-      });
+    try {
+      console.log(data);
+      // Check if image is uploaded then generate image thumbnail
+      if (selectedFile && imgSrc) {
+        await resizeImageDimension(imgSrc, 1200, (resizedImage: string) => {
+          console.log('resizedImage 1200 dataUri', { resizedImage });
+        });
+        await resizeImageDimension(imgSrc, 300, (resizedImage: string) => {
+          console.log('resizedImage 300 dataUri', { resizedImage });
+        });
+      }
+    } catch (error) {
+      console.log('onSubmit', error);
     }
   };
 
