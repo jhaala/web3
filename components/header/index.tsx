@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 
+import Logo from 'public/img/logo.png';
 import ConnetWallet from 'components/wallet';
 import { NAVBAR_CONSTANTS } from 'constants/DropdownConstants';
 import ProfileDropdown from 'components/profile/ProfileDropdown';
@@ -10,8 +12,8 @@ const Header = () => {
       <div className='flex items-center px-6 py-6 xl:px-24'>
         {/* <!-- Logo --> */}
         <a href='/' className='shrink-0'>
-          <img src='img/logo.png' className='max-h-7' alt='' />
-          <img src='img/logo_white.png' className='hidden max-h-7 dark:block' alt='' />
+          <Image src={Logo} height={28} width={130} alt='' />
+          {/* <img src='img/logo_white.png' className='max-h-7' alt='' /> */}
         </a>
         {/* <!-- Menu / Actions --> */}
         <div className='js-mobile-menu invisible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 dark:bg-jacarta-800 lg:visible lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent'>
