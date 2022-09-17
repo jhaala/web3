@@ -1,17 +1,17 @@
 import React from 'react';
-import ReactCrop from 'react-image-crop';
+import ReactCrop, { Crop, PixelCrop } from 'react-image-crop';
 
 import 'react-image-crop/dist/ReactCrop.css';
 
 interface ImageCropperType {
-  crop: any;
-  imgSrc: any;
-  imgRef: any;
-  setCrop: any;
-  onImageLoad: any;
-  setCompletedCrop: any;
-  className?: any;
-  style?: any;
+  crop?: Crop;
+  imgSrc: string;
+  imgRef: React.RefObject<HTMLImageElement>;
+  setCrop: React.Dispatch<React.SetStateAction<Crop | undefined>>;
+  onImageLoad: (e: React.SyntheticEvent<HTMLImageElement, Event>) => void;
+  setCompletedCrop: React.Dispatch<React.SetStateAction<PixelCrop | undefined>>;
+  className?: string;
+  style?: React.CSSProperties;
   disabled?: boolean;
 }
 
