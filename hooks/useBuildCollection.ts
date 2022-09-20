@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import slugify from 'slugify';
 import { Crop, PixelCrop } from 'react-image-crop';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { canvasPreview } from 'utils/canvasPreview';
 import { useDebounceEffect } from 'hooks/useDebounceEffect';
@@ -15,7 +16,10 @@ const useBuildCollection = () => {
   const [selectedFile, setSelectedFile] = useState<File>();
   const [completedCrop, setCompletedCrop] = useState<PixelCrop>();
 
-  const { control, handleSubmit } = useForm<BuildCollectionInputType>();
+  const { control, watch, setValue, getFieldState, handleSubmit } = useForm<BuildCollectionInputType>();
+  const nameWatchField = watch('name');
+  // if slug field edited
+  const isSlugFieldEdited = getFieldState('slug').isDirty;
 
   const imgRef = useRef<HTMLImageElement>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -67,6 +71,24 @@ const useBuildCollection = () => {
       setCrop(centerAspectCrop(width, height, aspect));
     }
   };
+
+  // useEffect - Slug field, auto-fill using the text input from the Name field
+  useEffect(() => {
+    if (nameWatchField && !isSlugFieldEdited) {
+      setValue(
+        'slug',
+        slugify(nameWatchField, {
+          replacement: '-',
+          remove: undefined,
+          lower: true,
+          strict: false,
+          locale: 'en',
+          trim: true,
+        }),
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nameWatchField, isSlugFieldEdited]);
 
   useDebounceEffect(
     async () => {

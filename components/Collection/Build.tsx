@@ -54,17 +54,23 @@ const BuildCollection = () => {
                     control={control}
                     defaultValue=''
                     rules={item.rules}
-                    render={({ field: { name, value, onChange }, fieldState: { error } }) => (
-                      <Field
-                        type='text'
-                        placeholder={item.placeholder}
-                        name={name}
-                        value={value}
-                        onChange={onChange}
-                        error={error?.message}
-                        // disabled={loading} TODO: Later API integartion
-                      />
-                    )}
+                    // Don't remove this isDirty unused variable if you remove then field is
+                    // edited or not code block will not work in useBuildCollection file
+                    render={({ field: { onChange, onBlur, value, name, ref }, fieldState: { isDirty, error } }) => {
+                      return (
+                        <Field
+                          type='text'
+                          placeholder={item.placeholder}
+                          name={name}
+                          value={value}
+                          onChange={onChange}
+                          error={error?.message}
+                          onBlur={onBlur} // notify when input is touched
+                          ref={ref} // wire up the input ref
+                          // disabled={loading} TODO: Later API integartion
+                        />
+                      );
+                    }}
                   />
                 </div>
               );
